@@ -141,3 +141,5 @@ GitHub.sublime-settings
 
 # Configurações de acesso a banco de dados, utilizando varaiveis de ambiente.
 .configs
+
+.secrets.json

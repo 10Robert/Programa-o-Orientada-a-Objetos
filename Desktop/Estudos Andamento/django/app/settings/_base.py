@@ -14,14 +14,17 @@ from pathlib import Path
 import os
 from django.core.exceptions import ImproperlyConfigured
 import configs
+import json
 
-
-def get_secret(setting):
-    try:
-        return os.environ.get(setting)
-    except KeyError:
-        error_msg = f'Set the {setting} environment variable'
-        raise ImproperlyConfigured(error_msg)
+with open(os.path.join(os.path.dirname(__file__), "secrets.json"), "r") as f:
+    secrets = json.loads(f.read())
+    """Obtém a variável sigilosa ou retorna uma exceção explícita"""
+    def get_secret(setting):
+        try:
+            return secrets[setting]
+        except KeyError:
+            error_msg = f'Set the {setting} environment variable'
+            raise ImproperlyConfigured(error_msg)
     
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
