@@ -17,6 +17,7 @@ import configs
 import json
 import sys
 
+from app.apps.core.versioning import get_git_changset_timestamp
 
 with open(os.path.join(os.path.dirname(__file__), "secrets.json"), "r") as f:
     secrets = json.loads(f.read())
@@ -154,7 +155,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+timestamp = get_git_changset_timestamp(BASE_DIR)
+STATIC_URL = f'static/{timestamp}/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
