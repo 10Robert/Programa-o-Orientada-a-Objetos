@@ -1,0 +1,7 @@
+Qualquer mensagem (LogFileMixin)
+Sucess: Erro (LogFileMixin)
+Sucess: Erro (LogFileMixin)
+Sucess: Erro (LogFileMixin)
+Sucess: Erro (LogFileMixin)
+Sucess: Erro (LogFileMixin)
+Sucess: Erro (LogFileMixin)
